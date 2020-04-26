@@ -1,10 +1,10 @@
-﻿using System;
-using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+﻿using CICD.Domain;
 using CICD.Mvc.Models;
 using CICD.Mvc.ViewModels;
-using CICD.Domain;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Diagnostics;
 
 namespace CICD.Mvc.Controllers
 {
