@@ -1,16 +1,16 @@
-﻿using System;
-using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+﻿using CICD.Domain;
 using CICD.Mvc.Models;
 using CICD.Mvc.ViewModels;
-using CICD.Domain;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Diagnostics;
 
 namespace CICD.Mvc.Controllers
 {
     public class HomeController : Controller
     {
-        //private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
         {
