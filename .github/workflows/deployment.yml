@@ -33,10 +33,9 @@ jobs:
       env: 
         HEROKU_REGISTRY_URL: registry.heroku.com
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        HEROKU_NAME_APP: ${{ secrets.HEROKU_APP_NAME }}
       run: |
             docker build -t cia-deployment-dries .
             heroku container:login
-            docker tag cia-heroku-test registry.heroku.com/$HEROKU_NAME_APP/web
-            docker push registry.heroku.com/$HEROKU_NAME_APP/web
-            heroku container:release web -a $HEROKU_NAME_APP
+            docker tag cia-heroku-test registry.heroku.com/cia-deployment-dries/web
+            docker push registry.heroku.com/cia-deployment-dries/web
+            heroku container:release web -a cia-deployment-dries
