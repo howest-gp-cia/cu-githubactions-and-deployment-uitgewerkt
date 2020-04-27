@@ -20,6 +20,5 @@ RUN dotnet publish "CICD.Mvc.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "CICD.Mvc.dll"]
-
-#CMD ASPNETCORE_URLS=http://+:$PORT dotnet CICD.Mvc.dll
+#ENTRYPOINT ["dotnet", "CICD.Mvc.dll"]
+CMD ASPNETCORE_URLS=http://+:$PORT dotnet CICD.Mvc.dll
