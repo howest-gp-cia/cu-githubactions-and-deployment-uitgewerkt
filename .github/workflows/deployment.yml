@@ -19,6 +19,15 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2     
+      
+    - uses: actions/setup-dotnet@v1
+      with: 
+        dotnet-version: '3.1.100' #SDK Version to use
+    - name: Try to build my code
+      run: dotnet build
+
+    - name: Run Unit tests on my code
+      run: dotnet test -v n
 
     - name: Push to heroku
       env: 
