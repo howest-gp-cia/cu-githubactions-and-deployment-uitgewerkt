@@ -2,7 +2,9 @@
 @model StringCalculatorViewModel
 
 <div class="text-center">
-    <h1 class="display-4">Stringcalculator</h1>
+    <div class="alert alert-info">
+        <h1 class="display-4">Stringcalculator</h1>
+    </div>
     <form asp-controller="Home" asp-action="Index" method="post">
         <input type="text" asp-for="Input" value="@Model.Input" />
         <p>Sum: @Model.Sum</p>
