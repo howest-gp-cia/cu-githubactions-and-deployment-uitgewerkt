@@ -29,13 +29,13 @@ jobs:
     - name: Run Unit tests on my code
       run: dotnet test -v n
 
-    - name: Push to heroku
-      env: 
-        HEROKU_REGISTRY_URL: registry.heroku.com
-        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: |
-            docker build -t cia-deployment-dries .
-            heroku container:login
-            docker tag cia-deployment-dries registry.heroku.com/cia-deployment-dries/web
-            docker push registry.heroku.com/cia-deployment-dries/web
-            heroku container:release web -a cia-deployment-dries
+    #- name: Push to heroku
+    #  env: 
+    #    HEROKU_REGISTRY_URL: registry.heroku.com
+    #    HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+    #  run: |
+    #        docker build -t cia-deployment-dries .
+    #        heroku container:login
+    #        docker tag cia-deployment-dries registry.heroku.com/cia-deployment-dries/web
+    #        docker push registry.heroku.com/cia-deployment-dries/web
+    #        heroku container:release web -a cia-deployment-dries
